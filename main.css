@@ -1,5 +1,6 @@
 body{
     background-color: white;
+    height:100%;
 }
 .button-design{
   font-size:10px;
@@ -10,24 +11,13 @@ body{
     height:30;
     background-color:black
 }
-.split_left{
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    text-align: left;   
-}
-.split_right{
-    position: absolute;
-    top: 50%;
-    right: 0%;
-    transform: translate(-50%, -50%);
-    text-align: left;   
+.column{
+    display: flex;
+    justify-content: center; 
 }
 .image{
-    width:411px;
-    height:331px;
-    image-orientation: 50%;
+   
+    max-width: 100%;
 }
 .warning{
     position: fixed;
@@ -45,4 +35,20 @@ body{
     text-align: center;
     width: 100%;
     background-color: white;
+}
+.content{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    display:grid;
+    align-items:center;
+    width: 100%;
+    grid-auto-flow: row;
+  
+}
+@media only screen and  (min-width:710px) {
+    .content{
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
 }
